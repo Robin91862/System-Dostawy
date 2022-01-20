@@ -39,26 +39,26 @@ if wybór == '2':
     hasło = input("Wprowadź hasło: ")
     if hasło == 'password' and login == 'Robin91862':
         print("Zalogowano!")
-    else:print("Wprowadzono błędne dane!")
-    print("Co chcesz zrobić?")
-    print("1 - Wyślij za darmo")
-    wyślij = input()
-    if wyślij == '1':
-        print("Podaj dane paczki")
+        print("Co chcesz zrobić?")
+        print("1 - Wyślij za darmo")
+        wyślij = input()
+        if wyślij == '1':
+            print("Podaj dane paczki")
 
-        input("Adres: ")
+            input("Adres: ")
 
-        input("Kod pocztowy: ")
+            input("Kod pocztowy: ")
 
-        input("Miasto: ")
+            input("Miasto: ")
 
-        skończenieWpisywaniaAdresu2 = input("Wciśnij Enter")
+            skończenieWpisywaniaAdresu2 = input("Wciśnij Enter")
 
         if skończenieWpisywaniaAdresu2 == '':
-            print("Ok, twoja paczka zostanie wkrótce nadana! Dziękujemy i zapraszamy ponownie!")
-            print()
-            print("Co chcesz zrobić?")
-            print("0 - Wyjdź z aplikacji")
-            zakończenie2 = input()
-            if zakończenie2 == '0':
-                sys.exit()
+                print("Ok, twoja paczka zostanie wkrótce nadana! Dziękujemy i zapraszamy ponownie!")
+                print()
+                print("Co chcesz zrobić?")
+                print("0 - Wyjdź z aplikacji")
+                zakończenie2 = input()
+                if zakończenie2 == '0':
+                    sys.exit()
+    else:print("Wprowadzono błędne dane!")
