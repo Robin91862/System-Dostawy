@@ -1,2 +1,3 @@
-# System-DPD
-System firmy DPD
+# System DPD
+
+# Aby uruchomić, musisz mieć oprogramowanie Python
