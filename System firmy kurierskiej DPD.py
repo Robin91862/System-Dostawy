@@ -62,3 +62,9 @@ if wybór == '2':
                 if zakończenie2 == '0':
                     sys.exit()
     else:print("Wprowadzono błędne dane!")
+    print()
+    print("Co chcesz zrobić?")
+    print("0 - Wyjdź z aplikacji")
+    zakończenie3 = input()
+    if zakończenie3 == '0':
+        sys.exit()
