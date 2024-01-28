@@ -1,70 +1,67 @@
 import sys
 
-print("Witaj w systemie DPD")
-
-print("Co chcesz zrobić?")
-
-print("1 - Wyślij paczkę")
-
-print("2 - Zaloguj się")
-
-wybór = input()
-
-
-if wybór == '1':
+def send_package():
     print("Podaj dane paczki")
+    address = input("Adres: ")
+    postal_code = input("Kod pocztowy: ")
+    city = input("Miasto: ")
+    bank_code = input("Kod z aplikacji banku: ")
 
-    input("Adres: ")
+    confirmation = input("Wciśnij enter aby potwierdzić")
 
-    input("Kod pocztowy: ")
-
-    input("Miasto: ")
-
-    input("Kod BLIK: ")
-    
-    skończenieWpisywaniaAdresu = input("Wciśnij Enter")
-
-    if skończenieWpisywaniaAdresu == '':
+    if confirmation == '':
         print("Ok, twoja paczka zostanie wkrótce nadana! Dziękujemy i zapraszamy ponownie!")
-        print()
-        print("Co chcesz zrobić?")
-        print("0 - Wyjdź z aplikacji")
-        zakończenie = input()
-        if zakończenie == '0':
+        return True
+    return False
+
+def login():
+    print("Wprowadź dane!")
+    username = input("Wprowadź login: ")
+    password = input("Wprowadź hasło: ")
+
+    if password == 'password' and username == 'Robin91862':
+        print("Zalogowano!")
+        return True
+    else:
+        print("Nieprawidłowy login lub hasło.")
+        return False
+
+def main():
+    print("Witaj w systemie dostawy")
+    print("Co chcesz zrobić?")
+    print("1 - Wyślij paczkę")
+    print("2 - Zaloguj się")
+
+    choice = input()
+
+    if choice == '1':
+        if send_package():
+            print("Co chcesz zrobić?")
+            print("0 - Wyjdź z aplikacji")
+            end = input()
+            if end == '0':
+                sys.exit()
+            else:
+                sys.exit()
+
+    elif choice == '2':
+        if login():
+            print("Co chcesz zrobić?")
+            print("1 - Wyślij za darmo")
+            send_free = input()
+            if send_free == '1':
+                if send_package():
+                    print("Co chcesz zrobić?")
+                    print("0 - Wyjdź z aplikacji")
+                    end = input()
+                    if end == '0':
+                        sys.exit()
+                    else:
+                        sys.exit()
+            else:
+                sys.exit()
+        else:
             sys.exit()
 
-if wybór == '2':
-    print("Wprowadź dane!")
-    login = input("Wprowadź login: ")
-    hasło = input("Wprowadź hasło: ")
-    if hasło == 'password' and login == 'Robin91862':
-        print("Zalogowano!")
-        print("Co chcesz zrobić?")
-        print("1 - Wyślij za darmo")
-        wyślij = input()
-        if wyślij == '1':
-            print("Podaj dane paczki")
-
-            input("Adres: ")
-
-            input("Kod pocztowy: ")
-
-            input("Miasto: ")
-
-            skończenieWpisywaniaAdresu2 = input("Wciśnij Enter")
-
-        if skończenieWpisywaniaAdresu2 == '':
-                print("Ok, twoja paczka zostanie wkrótce nadana! Dziękujemy i zapraszamy ponownie!")
-                print()
-                print("Co chcesz zrobić?")
-                print("0 - Wyjdź z aplikacji")
-                zakończenie2 = input()
-                if zakończenie2 == '0':
-                    sys.exit()
-    else:print("Wprowadzono błędne dane!")
-    print()
-    print("Co chcesz zrobić?")
-    print("0 - Wyjdź z aplikacji")
-    zakończenie3 = input()
-    if zakończenie3 == '0':
-        sys.exit()
+if __name__ == "__main__":
+    main()
